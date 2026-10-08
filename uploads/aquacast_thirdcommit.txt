@@ -1,0 +1,1781 @@
+# AQUACAST — MASTER CODING AGENT PROMPT
+
+You are working on an existing project called **AquaCast-Punjab**.
+
+Repository:
+https://github.com/shubhamcore/AquaCast-Punjab
+
+Your task is to **upgrade the existing project into a polished, competition-ready prototype for the SANKALP by Satin Finserv — Climate Edition**, while preserving the useful existing functionality.
+
+Do NOT blindly rebuild the project from scratch.
+
+First inspect the entire existing repository and understand:
+- current frontend structure
+- backend structure
+- existing APIs
+- existing ML models
+- existing groundwater forecasting
+- existing crop/water calculations
+- existing digital-twin functionality
+- existing components
+- existing routes
+- existing README
+- existing assets
+- existing deployment assumptions
+
+Then extend the project cleanly.
+
+---
+
+# 1. CORE PRODUCT DIRECTION
+
+AquaCast should no longer feel like merely:
+
+> "A groundwater prediction + notification system."
+
+The prototype should communicate this product:
+
+> **AquaCast — AI-powered Climate-Smart Farm Digital Twin**
+
+Core idea:
+
+> **Forecast → Simulate → Optimize → Finance → Verify**
+
+AquaCast should help a farmer understand:
+
+1. What is happening to their groundwater?
+2. How much water will their crops require?
+3. What climate/weather risks are coming?
+4. Which crops/crop combinations are better suited?
+5. What happens if they change their farming practices?
+6. How much water can they save?
+7. How much income can they retain/gain?
+8. How much CO₂e can they avoid?
+9. What can they do with crop residue?
+10. What climate intervention should they adopt?
+11. How much would that intervention cost?
+12. Could it be financed?
+13. Did the predicted impact actually happen?
+
+The final prototype should feel like a **climate intelligence and decision-support platform**, not an alert dashboard.
+
+---
+
+# 2. IMPORTANT PROTOTYPE RULE
+
+This is a **qualifying-round prototype**, NOT the final production system.
+
+Do NOT spend excessive time trying to configure production infrastructure.
+
+If a feature normally requires:
+
+- API keys
+- PostgreSQL
+- PostGIS
+- Google Earth Engine credentials
+- authentication
+- cloud storage
+- SMS/WhatsApp integration
+- external financial APIs
+- real-time IoT
+- production notification services
+- paid APIs
+- external ML infrastructure
+
+then:
+
+### For the prototype:
+
+Use:
+- existing data
+- realistic static/sample data
+- local JSON
+- mocked API responses
+- deterministic calculations
+- lightweight client-side simulations
+- publicly available online data where practical and legally/API-wise feasible
+
+The prototype MUST remain runnable without secret credentials.
+
+However:
+
+### Every such production dependency must be documented in README.md.
+
+Create a clear section:
+
+**"Prototype vs Production Architecture"**
+
+For every mocked/external feature explain:
+- what is currently demonstrated
+- what production implementation would use
+- what API/database/service would eventually be connected
+- why it is currently mocked
+
+DO NOT hide this limitation.
+
+The UI should also make it visually clear when a feature is a **prototype simulation**.
+
+Use wording such as:
+
+> "Prototype simulation — live integration planned for production."
+
+Do NOT make fake external integrations appear to be real.
+
+---
+
+# 3. PRODUCT ARCHITECTURE
+
+There must be exactly **4 major dashboard experiences**.
+
+## Dashboard 1 — FARMER
+
+The main desktop/tablet dashboard.
+
+## Dashboard 2 — FARMER PHONE
+
+A realistic smartphone representation of what the farmer would see.
+
+This should NOT simply be a responsive copy of the desktop dashboard.
+
+Instead, create an actual phone mockup/frame and display a simplified farmer experience inside it.
+
+## Dashboard 3 — ADMIN / CLIMATE OPERATIONS
+
+A higher-level analytical dashboard for administrators, agricultural organizations, financiers, or program managers.
+
+## Dashboard 4 — PRESENTATION / EXPLAINER
+
+A dedicated presentation screen containing:
+
+- YouTube explanatory video embed area
+- PPT presentation viewer/embed area
+- project explanation
+- architecture
+- impact
+- methodology
+- future roadmap
+
+This dashboard should be useful during a judging/demo session.
+
+---
+
+# 4. GLOBAL UI/UX PRINCIPLES
+
+The UI needs a major visual upgrade.
+
+Do NOT scatter random cards everywhere.
+
+Avoid:
+- excessive cards
+- excessive gradients
+- huge text
+- meaningless statistics
+- redundant information
+- repeated charts
+- dashboard clutter
+- random AI-generated copy
+- decorative elements that don't communicate anything
+
+The design should feel like a serious **climate-tech product**.
+
+Think:
+
+- modern
+- clean
+- responsive
+- data-rich
+- agricultural
+- environmental
+- professional
+- slightly futuristic
+- easy to understand
+
+Use strong visual hierarchy.
+
+Every section should answer a specific question.
+
+Example:
+
+### "How is my farm doing?"
+
+→ health overview
+
+### "What is going to happen?"
+
+→ forecasts
+
+### "What should I do?"
+
+→ recommendations
+
+### "What if I change something?"
+
+→ scenario simulator
+
+### "What impact will that create?"
+
+→ water / income / carbon / soil
+
+### "How do I implement it?"
+
+→ financing
+
+---
+
+# 5. GLOBAL NAVIGATION
+
+Create a clean global navigation system.
+
+Top-level dashboard switcher:
+
+```text
+Farmer
+Farmer Phone
+Admin
+Presentation
+```
+
+Inside each dashboard, use relevant tabs.
+
+Do NOT put every feature into one giant sidebar.
+
+---
+
+# 6. FARMER DASHBOARD
+
+Create relevant tabs such as:
+
+```text
+Overview
+Water Intelligence
+Crop Intelligence
+Climate Twin
+Circularity
+Climate Finance
+Impact
+AI Advisor
+```
+
+You may rename tabs if a better information architecture exists.
+
+---
+
+# 7. FARMER — OVERVIEW
+
+This should be the main landing page.
+
+Show a concise farm health overview.
+
+Example:
+
+```text
+Farm Health
+Good / Moderate / At Risk
+
+Groundwater
+↓ 0.42 m projected
+
+Water Stress
+Moderate
+
+Crop Health
+Good
+
+Climate Risk
+Moderate
+
+Expected Income
+₹XX,XXX / ha
+```
+
+Then provide a small number of high-value visualizations.
+
+Examples:
+
+### Groundwater forecast
+
+Historical → current → forecast
+
+### Water budget
+
+Available water vs expected crop requirement
+
+### Crop status
+
+Current crop + health + expected yield
+
+### Top recommendation
+
+One prominent recommendation:
+
+> "Consider reducing paddy area by 20% and shifting part of the area to maize."
+
+Do NOT show ten recommendations simultaneously.
+
+---
+
+# 8. WATER INTELLIGENCE
+
+Create a dedicated water dashboard.
+
+Include:
+
+### Groundwater forecast
+
+Use the existing groundwater model if available.
+
+Show:
+
+- historical groundwater
+- current level
+- predicted level
+- confidence/uncertainty if available
+
+Example:
+
+```text
+Current: 18.4 m
+Forecast: 18.9 m
+Risk: Moderate
+```
+
+### Water budget
+
+Show:
+
+```text
+Expected rainfall
++
+Canal availability
++
+Groundwater availability
+-
+Crop demand
+=
+Water balance
+```
+
+### Irrigation requirement
+
+Use the existing FAO-56 / water-balance implementation if already present.
+
+If not present, implement a clean simplified prototype version.
+
+Clearly document assumptions.
+
+---
+
+# 9. CROP INTELLIGENCE
+
+Create a dedicated crop intelligence section.
+
+This should feel visually alive.
+
+Add crop cards/assets for major crops relevant to Punjab.
+
+At minimum consider:
+
+- Paddy
+- Wheat
+- Maize
+- Cotton
+- Pulses
+- Oilseeds
+
+Each crop card should have:
+
+- crop image/illustration
+- water demand
+- expected yield
+- estimated profitability
+- climate suitability
+- groundwater pressure
+- residue characteristics
+- crop duration
+
+Do NOT make these meaningless decorative cards.
+
+Each card must communicate useful decision information.
+
+Example:
+
+```text
+MAIZE
+
+Water demand
+████░░
+
+Climate suitability
+█████
+
+Expected yield
+4.2 t/ha
+
+Groundwater pressure
+LOW
+
+Estimated net return
+₹XX,XXX/ha
+```
+
+Allow the user to compare crops.
+
+---
+
+# 10. CROP RECOMMENDATION ENGINE
+
+Create a prototype crop recommendation system.
+
+Use the strongest existing implementation if one exists.
+
+Otherwise implement a deterministic scoring model using:
+
+- water requirement
+- rainfall
+- temperature
+- soil characteristics
+- groundwater risk
+- crop duration
+- estimated yield
+- estimated economic return
+
+Structure the system so it can later be replaced with:
+
+- XGBoost
+- LightGBM
+- neural network
+
+without changing the frontend.
+
+The README should explain this future ML architecture.
+
+---
+
+# 11. CLIMATE DIGITAL TWIN
+
+THIS IS THE MOST IMPORTANT NEW FEATURE.
+
+Create a dedicated:
+
+# "Climate Farm Twin"
+
+section.
+
+The user should be able to compare:
+
+## Current Farm
+
+against
+
+## Proposed Farm
+
+Allow controls for:
+
+### Crop allocation
+
+Example:
+
+```text
+Paddy: 60%
+Maize: 20%
+Pulses: 20%
+```
+
+### Irrigation
+
+```text
+Flood
+Controlled
+Drip
+Sprinkler
+```
+
+### Crop timing
+
+Allow a simplified adjustment.
+
+### Residue management
+
+```text
+Burn
+Incorporate
+Mulch
+Biomass collection
+```
+
+### Canal availability
+
+```text
+Low
+Normal
+High
+```
+
+### Rainfall scenario
+
+```text
+Normal
+-10%
+-20%
++10%
+```
+
+Then recalculate the simulated outputs.
+
+---
+
+# 12. SCENARIO OUTPUT
+
+When the user changes the scenario, immediately update:
+
+```text
+Water demand
+Groundwater impact
+Expected yield
+Expected income
+CO₂e
+Residue
+Climate risk
+```
+
+Example:
+
+```text
+CURRENT FARM
+
+Water use       14,200 m³
+Income          ₹91,000
+CO₂e            1.8 t
+Residue burned  4.2 t
+Risk            HIGH
+
+
+PROPOSED FARM
+
+Water use       9,600 m³
+Income          ₹89,500
+CO₂e            1.3 t
+Residue burned  0 t
+Risk            MODERATE
+```
+
+Then highlight:
+
+```text
+32% less water
+21% lower emissions
+100% less residue burning
+₹1,500 lower income
+```
+
+The user should immediately understand the trade-off.
+
+---
+
+# 13. MULTI-OBJECTIVE OPTIMIZATION
+
+Add a prototype optimization feature.
+
+Allow the user to select:
+
+```text
+Optimize for:
+
+○ Maximum income
+○ Minimum water use
+○ Minimum climate impact
+○ Balanced
+```
+
+The backend should calculate a recommended scenario.
+
+For the prototype, a weighted scoring/optimization algorithm is acceptable.
+
+Structure the code so it can later be replaced with:
+
+- OR-Tools
+- mixed integer optimization
+- multi-objective optimization
+- Pareto optimization
+
+The README must explain this future architecture.
+
+---
+
+# 14. PARETO / TRADE-OFF VISUALIZATION
+
+Create a clean chart showing:
+
+```text
+Income
+  ↑
+  │        ●
+  │      ●
+  │    ●
+  │  ●
+  └────────────→ Water Saved
+```
+
+Explain:
+
+> "There is no single climate solution. AquaCast helps identify the best trade-off between farmer income and environmental impact."
+
+This is an important conceptual feature.
+
+---
+
+# 15. CIRCULARITY DASHBOARD
+
+Create a dedicated:
+
+# "Circularity"
+
+tab.
+
+Focus on crop residue.
+
+Show:
+
+```text
+Residue generated
+Residue burned
+Residue recovered
+Residue incorporated
+```
+
+Then provide alternative pathways:
+
+### Soil incorporation
+
+### Mulching
+
+### Biomass collection
+
+### Bioenergy / industrial use
+
+For each:
+
+```text
+Water impact
+CO₂ impact
+Estimated cost
+Estimated value
+Soil impact
+```
+
+Use a Sankey-like or flow visualization if practical.
+
+Example:
+
+```text
+             CROP RESIDUE
+                  │
+       ┌──────────┼───────────┐
+       ↓          ↓           ↓
+    Soil       Biomass      Mulch
+    return     recovery
+       │          │           │
+   Soil gain   ₹ value     Water saving
+```
+
+---
+
+# 16. CARBON / CLIMATE IMPACT
+
+Create a climate impact section.
+
+Estimate:
+
+- CO₂e
+- residue emissions
+- irrigation energy
+- fertilizer impact
+- machinery impact
+- soil carbon benefit where data allows
+
+DO NOT pretend to have scientifically exact carbon accounting if the model is simplified.
+
+Label it:
+
+> "Prototype estimate"
+
+Show:
+
+```text
+Current scenario
+vs
+Recommended scenario
+```
+
+Example:
+
+```text
+CO₂e
+1.82 t/ha → 1.43 t/ha
+
+Reduction
+21.4%
+```
+
+---
+
+# 17. CLIMATE FINANCE
+
+Create a dedicated:
+
+# "Climate Finance"
+
+section.
+
+Show recommended interventions.
+
+Examples:
+
+### Drip irrigation
+
+```text
+Investment
+₹60,000
+
+Annual estimated savings
+₹25,000
+
+Payback
+2.4 years
+
+Water saved
+X m³
+
+CO₂ avoided
+X t
+```
+
+### Solar pump
+
+If included, clearly separate prototype assumptions.
+
+### Efficient irrigation
+
+### Soil/crop transition
+
+Provide:
+
+```text
+Estimated investment
+Expected annual benefit
+Payback period
+Climate impact
+```
+
+Then show:
+
+> "Potential financing requirement"
+
+Do NOT integrate a real lender API in the prototype.
+
+Instead:
+
+```text
+Prototype financing simulation
+Production version can connect to lender/financing APIs.
+```
+
+---
+
+# 18. IMPACT VERIFICATION
+
+Create:
+
+# "Impact"
+
+tab.
+
+This should demonstrate the closed-loop concept:
+
+```text
+PREDICT
+   ↓
+ACT
+   ↓
+OBSERVE
+   ↓
+VERIFY
+```
+
+Show:
+
+### Predicted
+
+vs
+
+### Observed
+
+Examples:
+
+```text
+Predicted water saving
+2,000 m³
+
+Observed
+1,820 m³
+
+Prediction accuracy
+91%
+```
+
+For prototype purposes, use sample data and clearly label it:
+
+> "Illustrative prototype data"
+
+Later this can be connected to:
+
+- satellite
+- sensors
+- farmer-reported data
+- groundwater observations
+- weather APIs
+
+---
+
+# 19. SATELLITE / GEOSPATIAL FEATURE
+
+Where practical, add a prototype satellite layer.
+
+If external Google Earth Engine credentials are unavailable:
+
+DO NOT block the application.
+
+Instead use:
+
+- sample imagery
+- static map
+- mock NDVI data
+- sample farm polygons
+
+Show:
+
+```text
+NDVI
+NDMI
+Crop health
+Water stress
+```
+
+Clearly label:
+
+> "Prototype satellite layer — live Earth Engine integration planned."
+
+README must document Google Earth Engine as a future/current production integration.
+
+---
+
+# 20. AI ADVISOR
+
+Create a dedicated:
+
+# "AquaCast AI"
+
+experience.
+
+If Gemini API is available through environment variables, support it.
+
+But the app MUST continue working without a Gemini API key.
+
+Fallback:
+
+Use a deterministic local response engine based on current farm state.
+
+The AI assistant should answer questions like:
+
+```text
+Why should I reduce paddy?
+
+Which crop is best for my farm?
+
+How much water can I save?
+
+What happens if rainfall falls by 20%?
+
+Can I afford drip irrigation?
+
+Why is groundwater risk high?
+
+Which climate intervention gives the fastest payback?
+```
+
+IMPORTANT:
+
+The LLM must NOT invent numerical values.
+
+The architecture should be:
+
+```text
+User question
+      ↓
+Gemini
+      ↓
+Tool/function call
+      ↓
+AquaCast backend
+      ↓
+Physics / ML / optimizer
+      ↓
+Actual calculated values
+      ↓
+Gemini explanation
+```
+
+If function calling is not implemented in the prototype, simulate the architecture cleanly.
+
+Document production implementation.
+
+---
+
+# 21. FARMER PHONE DASHBOARD
+
+This is important.
+
+Do NOT merely create a mobile-responsive webpage.
+
+Create a visual **smartphone mockup**.
+
+Example:
+
+```text
+       ┌───────────────────────┐
+       │  9:41                │
+       │                       │
+       │   🌾 AquaCast         │
+       │                       │
+       │  ⚠️ Water Stress      │
+       │  Moderate             │
+       │                       │
+       │  Groundwater          │
+       │  ↓ 0.42 m             │
+       │                       │
+       │  Recommended Action   │
+       │                       │
+       │  Reduce irrigation   │
+       │  by 15% this week     │
+       │                       │
+       │ [Why?] [Plan]         │
+       │                       │
+       │  💧  🌾  🔔  👤       │
+       └───────────────────────┘
+```
+
+The phone experience should focus on:
+
+### Alerts
+
+### Recommendations
+
+### Water status
+
+### Crop status
+
+### Simple actions
+
+### AI assistance
+
+Avoid putting complicated charts on the phone.
+
+The farmer phone should feel like a realistic product concept.
+
+---
+
+# 22. ADMIN DASHBOARD
+
+Create a separate admin dashboard.
+
+Purpose:
+
+Monitor an entire region/program.
+
+Include:
+
+### Regional groundwater map
+
+### Farms at risk
+
+### Crop distribution
+
+### Water demand
+
+### Climate interventions
+
+### Total water saved
+
+### Total CO₂ avoided
+
+### Farmers reached
+
+### Financing required
+
+### Intervention adoption
+
+Example:
+
+```text
+REGIONAL CLIMATE OVERVIEW
+
+Farmers monitored        12,840
+
+High water-risk farms    2,184
+
+Water saved               18.4M m³
+
+CO₂ avoided               4,280 t
+
+Interventions adopted     6,320
+
+Climate financing        ₹18.2 Cr
+```
+
+These should be clearly labelled as:
+
+> Prototype / illustrative regional data
+
+unless backed by real data.
+
+---
+
+# 23. ADMIN TABS
+
+Use relevant tabs:
+
+```text
+Regional Overview
+Water Risk
+Crop Patterns
+Climate Impact
+Interventions
+Finance
+Verification
+```
+
+Do not duplicate farmer dashboard content unnecessarily.
+
+---
+
+# 24. PRESENTATION DASHBOARD
+
+Create a dedicated fourth dashboard:
+
+# "Presentation"
+
+This should be designed specifically for judges/demo mode.
+
+Include:
+
+## Section 1
+
+Project title
+
+> AquaCast
+
+> AI-powered Climate-Smart Farm Digital Twin
+
+---
+
+## Section 2
+
+Embedded YouTube explanatory video.
+
+Provide a configuration variable or simple UI field for the YouTube URL.
+
+If no URL exists:
+
+show:
+
+> "YouTube explainer will be embedded here."
+
+---
+
+## Section 3
+
+PPT viewer.
+
+If a PDF/PPT export is not available, create a clean placeholder:
+
+> "Project presentation will be embedded here."
+
+Prefer PDF.js or another browser-friendly presentation viewer if practical.
+
+---
+
+## Section 4
+
+Architecture
+
+Show:
+
+```text
+Data
+ ↓
+Prediction
+ ↓
+Digital Twin
+ ↓
+Optimization
+ ↓
+Finance
+ ↓
+Verification
+```
+
+---
+
+## Section 5
+
+Impact
+
+Show the strongest project numbers.
+
+---
+
+## Section 6
+
+Future roadmap
+
+Clearly separate:
+
+```text
+Prototype
+      ↓
+Pilot
+      ↓
+Production
+```
+
+---
+
+# 25. PRESENTATION MODE
+
+Add a simple "Demo Mode" / "Presentation Mode".
+
+It should allow the team to quickly navigate:
+
+```text
+Problem
+Solution
+Farmer
+Climate Twin
+Circularity
+Finance
+Admin
+Impact
+Future
+```
+
+This will be used during judging.
+
+---
+
+# 26. UI ASSETS
+
+Make the interface feel alive.
+
+Add appropriate visual assets for:
+
+- crops
+- fields
+- farmer
+- irrigation
+- groundwater
+- weather
+- satellite
+- circular economy
+- climate
+- finance
+
+Prefer:
+- lightweight SVG
+- optimized WebP/PNG
+- local assets
+- icon libraries
+
+Avoid huge unoptimized images.
+
+Crop cards should have visually distinct crop assets.
+
+Use subtle animation where useful:
+
+- number counters
+- chart transitions
+- scenario transitions
+- status changes
+- map markers
+- loading states
+- hover states
+- phone notification animation
+
+Do NOT over-animate the UI.
+
+---
+
+# 27. RESPONSIVENESS
+
+The website must work on:
+
+- desktop
+- laptop
+- tablet
+- mobile
+
+But remember:
+
+### Farmer Phone dashboard is intentionally a phone product simulation.
+
+Do not rely on responsiveness alone.
+
+---
+
+# 28. DATA ARCHITECTURE
+
+Create clean separation between:
+
+```text
+data/
+models/
+services/
+simulation/
+optimization/
+api/
+components/
+pages/
+```
+
+Do not put all calculations directly inside React components.
+
+The frontend should consume structured data from service functions.
+
+---
+
+# 29. PROTOTYPE DATA
+
+Create a central sample dataset.
+
+Do NOT scatter hardcoded values across components.
+
+For example:
+
+```text
+/mock/
+  farms.json
+  crops.json
+  groundwater.json
+  weather.json
+  scenarios.json
+  impact.json
+  finance.json
+```
+
+All prototype numbers should come from these sources.
+
+This makes future replacement with APIs/database easy.
+
+---
+
+# 30. CONFIGURATION
+
+Create:
+
+```text
+.env.example
+```
+
+Document optional variables such as:
+
+```text
+GEMINI_API_KEY=
+WEATHER_API_KEY=
+GOOGLE_EARTH_ENGINE_CONFIG=
+DATABASE_URL=
+YOUTUBE_VIDEO_URL=
+PRESENTATION_URL=
+```
+
+The application MUST NOT crash when these are missing.
+
+Use graceful fallback behavior.
+
+---
+
+# 31. ERROR HANDLING
+
+External services must fail gracefully.
+
+Example:
+
+If Gemini unavailable:
+
+> "AI Advisor is running in prototype mode."
+
+If satellite unavailable:
+
+> "Live satellite integration unavailable — showing illustrative data."
+
+If database unavailable:
+
+> "Using prototype dataset."
+
+Never show a broken screen.
+
+Never expose API keys.
+
+Never hardcode secret keys.
+
+---
+
+# 32. README UPDATE
+
+Completely update README.md.
+
+The README should explain:
+
+# AquaCast
+
+## One-line description
+
+## Problem
+
+Explain:
+- groundwater depletion
+- climate variability
+- crop-water mismatch
+- residue/circularity
+- farmer economics
+
+## Solution
+
+Explain:
+
+> Forecast → Simulate → Optimize → Finance → Verify
+
+## Key Features
+
+Include:
+
+- Groundwater forecasting
+- Water intelligence
+- Crop intelligence
+- Climate digital twin
+- Scenario simulator
+- Multi-objective optimization
+- Circularity
+- Carbon impact
+- Climate finance
+- AI advisor
+- Satellite verification
+- Farmer phone
+- Admin dashboard
+- Presentation dashboard
+
+## Technical Architecture
+
+Explain:
+
+```text
+Frontend
+Backend
+ML
+Physics
+Optimization
+Satellite
+LLM
+Data
+```
+
+## AI / ML
+
+Explain what models are currently used.
+
+Clearly distinguish:
+
+### Implemented
+
+### Prototype simulation
+
+### Planned production implementation
+
+## External Integrations
+
+Create a table:
+
+| Feature | Prototype | Production |
+|---|---|---|
+| Weather | sample/public data | live weather API |
+| Satellite | mock/sample | Google Earth Engine + Sentinel-2 |
+| Soil | sample | SoilGrids |
+| LLM | optional Gemini | Gemini function calling |
+| Database | local/sample | PostgreSQL + PostGIS |
+| Finance | simulation | lender integration |
+| Notifications | UI simulation | SMS/WhatsApp/push |
+| Monitoring | sample | live farm/satellite data |
+
+## Prototype Limitations
+
+Be completely honest.
+
+## Production Roadmap
+
+Example:
+
+```text
+Phase 1
+Competition prototype
+
+Phase 2
+Pilot farms
+
+Phase 3
+Live satellite/weather integrations
+
+Phase 4
+Real farmer data
+
+Phase 5
+Climate finance integration
+
+Phase 6
+Regional deployment
+```
+
+## Local Setup
+
+Provide exact commands to:
+
+```bash
+git clone
+npm install
+...
+```
+
+or the appropriate commands for the actual project architecture.
+
+## Environment Variables
+
+Explain `.env.example`.
+
+## Project Structure
+
+Explain important folders.
+
+## Future Research
+
+Mention possible:
+
+- physics-informed ML
+- LSTM/GRU/Temporal models
+- uncertainty estimation
+- multi-objective optimization
+- satellite time-series modelling
+- causal impact measurement
+- climate-risk modelling
+
+---
+
+# 33. IMPORTANT — DO NOT OVERCLAIM
+
+This project is for a competition prototype.
+
+Never claim:
+
+- real-time satellite data if it isn't real-time
+- real farmer data if it is synthetic
+- actual financial approval
+- scientifically validated carbon credits
+- guaranteed yield
+- guaranteed income
+- guaranteed groundwater recovery
+- live API integration when it is mocked
+
+Use:
+
+> "estimated"
+
+> "projected"
+
+> "prototype simulation"
+
+> "illustrative"
+
+where appropriate.
+
+---
+
+# 34. PERFORMANCE
+
+The application should load quickly.
+
+Optimize:
+
+- images
+- charts
+- unnecessary rerenders
+- large dependencies
+- map components
+- animations
+
+Lazy-load large dashboard sections if appropriate.
+
+---
+
+# 35. CODE QUALITY
+
+Before finishing:
+
+- remove dead code
+- remove duplicate components
+- remove unused imports
+- fix console errors
+- fix broken routes
+- fix responsive issues
+- fix TypeScript errors
+- ensure build succeeds
+- ensure existing functionality still works
+- ensure no API key is committed
+
+---
+
+# 36. FINAL TEST
+
+Before declaring completion, test:
+
+### Farmer
+
+- navigation
+- overview
+- groundwater
+- crops
+- climate twin
+- scenario changes
+- circularity
+- finance
+- impact
+- AI advisor
+
+### Farmer Phone
+
+- phone visualization
+- alerts
+- recommendations
+- navigation
+- visual responsiveness
+
+### Admin
+
+- regional overview
+- charts
+- maps
+- impact
+- finance
+
+### Presentation
+
+- video placeholder/embed
+- PPT placeholder/viewer
+- architecture
+- impact
+- presentation mode
+
+### Global
+
+- desktop
+- mobile
+- refresh
+- missing API keys
+- missing external services
+- build
+- deployment
+
+---
+
+# 37. VERY IMPORTANT IMPLEMENTATION PRIORITY
+
+Do NOT spend all the time polishing tiny UI details before implementing the core functionality.
+
+Priority:
+
+## P0 — Must work
+
+1. Existing AquaCast functionality
+2. Farmer dashboard
+3. Climate Digital Twin
+4. Scenario comparison
+5. Water/crop/financial/climate outputs
+6. Farmer phone dashboard
+
+## P1 — Strong differentiators
+
+7. Circularity
+8. Climate finance
+9. Impact verification
+10. Admin dashboard
+11. Crop assets/visuals
+
+## P2 — AI/integration
+
+12. Gemini AI advisor
+13. Satellite prototype
+14. external API architecture
+
+## P3 — Presentation
+
+15. Presentation dashboard
+16. YouTube embed
+17. PPT viewer
+18. Demo mode
+
+---
+
+# 38. THE MOST IMPORTANT UX PRINCIPLE
+
+Every major feature should answer:
+
+> **"So what?"**
+
+For example:
+
+Don't show:
+
+> Groundwater forecast: -0.42m
+
+Instead:
+
+> **Groundwater stress expected to increase.**
+>
+> AquaCast recommends reducing irrigation demand by 15% over the next cycle.
+
+Don't show:
+
+> NDVI = 0.62
+
+Instead:
+
+> **Crop health is stable.**
+
+Don't show:
+
+> CO₂ = 1.4 t
+
+Instead:
+
+> **Recommended plan could reduce estimated emissions by 21%.**
+
+The raw technical values can be available through expandable details.
+
+---
+
+# 39. FINAL PRODUCT EXPERIENCE
+
+The ideal user journey should be:
+
+```text
+FARMER OPENS AQUACAST
+        ↓
+"How is my farm?"
+        ↓
+Overview
+        ↓
+"Why is water risk increasing?"
+        ↓
+Water Intelligence
+        ↓
+"What can I do?"
+        ↓
+Climate Twin
+        ↓
+"What if I change crops?"
+        ↓
+Scenario comparison
+        ↓
+"What is the best option?"
+        ↓
+Optimization
+        ↓
+"Can I afford it?"
+        ↓
+Climate Finance
+        ↓
+"Did it work?"
+        ↓
+Impact Verification
+```
+
+And on the farmer phone:
+
+```text
+ALERT
+ ↓
+RECOMMENDATION
+ ↓
+ACTION
+```
+
+And for administrators:
+
+```text
+REGIONAL RISK
+ ↓
+INTERVENTION
+ ↓
+ADOPTION
+ ↓
+CLIMATE IMPACT
+ ↓
+FINANCING
+```
+
+And for judges:
+
+```text
+PROBLEM
+ ↓
+AQUACAST
+ ↓
+LIVE DEMO
+ ↓
+CLIMATE TWIN
+ ↓
+IMPACT
+ ↓
+SCALABILITY
+```
+
+---
+
+# 40. SUCCESS CRITERIA
+
+When finished, AquaCast should feel like:
+
+> **A real climate-tech product prototype that could become a production platform.**
+
+It should NOT feel like:
+
+> "A student dashboard with a bunch of AI features."
+
+The most important differentiator is:
+
+### **AquaCast does not merely predict climate risk.**
+
+### **It converts prediction into an actionable, economically-aware climate intervention and then measures its impact.**
+
+Preserve that idea throughout the implementation.
+
+Start by inspecting the existing codebase and then implement incrementally.
+
+Do not ask me to manually specify every existing component unless absolutely necessary.
+
+Make sensible engineering decisions yourself.
+
+When finished, provide:
+1. summary of changes
+2. files changed
+3. new features
+4. prototype/mock integrations
+5. production integrations planned
+6. how to run
+7. any remaining limitations
+8. screenshots or visual verification if the coding environment supports it
